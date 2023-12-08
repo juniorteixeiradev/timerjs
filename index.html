@@ -16,17 +16,42 @@
             align-items:center;
             background: rgb(79,82,189);
             color:white;
-            font-size: 3rem;
+            font-size: 2rem;
         }
     </style>
     
 </head>
 <body>
-    <div id="timer">
+    <div id="container">
+        <div id="data"></div>
+        <div id="timer">
+    </div>
     </div>
 </body>
 <script>
-    function dataTime (){
+function currentDate(){
+
+    const mes = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
+    const dia = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sab", "Dom"]
+
+    data = new Date();
+
+    let getMes = mes[data.getMonth()];
+    let getDia = dia[data.getDay() - 1];
+    let getDiaNum = data.getDay() + 1;
+
+    console.log(data.getDate())
+    let formatData = `Hoje é ${getDia} dia ${data.getDate()} de ${getMes} de ${data.getFullYear()}`;
+
+    pegaDiv = document.getElementById("data");
+    pegaDiv.innerText = formatData;
+
+
+}
+
+currentDate();
+
+function dataTime (){
 
 data = new Date();
 let h = (data.getHours() < 10) ? "0" + data.getHours() : data.getHours();
