@@ -6,6 +6,9 @@
     <title>Clock Timer JS - Simple</title>
     <style>
         body {
+            font-family: 'Roboto', sans-serif;
+            width: 100vw;
+            height: 100vh;
             margin:0;
             padding:0;
             display:flex;
@@ -14,7 +17,6 @@
             background: rgb(79,82,189);
             color:white;
             font-size: 3rem;
-            font-family: "Sans-serif";
         }
     </style>
     
@@ -29,18 +31,21 @@
 data = new Date();
 let h = (data.getHours() < 10) ? "0" + data.getHours() : data.getHours();
 let m = (data.getMinutes() < 10) ? "0" + data.getMinutes() : data.getMinutes();
-let s = (data.Seconds() < 10) ? "0" + data.Seconds() : data.Seconds();
+let s = (data.getSeconds() < 10) ? "0" + data.getSeconds() : data.getSeconds();
         
-let formatData = `${h} : ${m}: ${s}`;
+let formatData = `${h} : ${m} : ${s}`;
 
 pegaDiv = document.getElementById("timer");
 pegaDiv.innerText = formatData;
 
 setInterval(dataTime, 1000)
 
- }
+}
 
- dataTime();
+dataTime();
         
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </html>
