@@ -27,7 +27,11 @@
     function dataTime (){
 
 data = new Date();
-let formatData = `${data.getHours()} : ${data.getMinutes()}: ${data.getSeconds()}`;
+let h = (data.getHours() < 10) ? "0" + data.getHours() : data.getHours();
+let m = (data.getMinutes() < 10) ? "0" + data.getMinutes() : data.getMinutes();
+let s = (data.Seconds() < 10) ? "0" + data.Seconds() : data.Seconds();
+        
+let formatData = `${h)} : ${m}: ${s}`;
 
 pegaDiv = document.getElementById("timer");
 pegaDiv.innerText = formatData;
